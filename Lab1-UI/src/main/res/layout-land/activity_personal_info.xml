@@ -64,7 +64,7 @@
         android:layout_marginEnd="31dp"
         android:layout_marginRight="31dp"
         android:hint="@string/apellidos"
-        android:imeOptions="actionNext"
+        android:imeOptions="actionDone"
         android:inputType="textCapSentences|textNoSuggestions" />
 
     <ImageView
