@@ -181,9 +181,9 @@
         android:id="@+id/botonSigPerso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:text="@string/botonSiguiente"
         android:layout_below="@+id/linearLayout"
-        android:text="@string/botonSiguiente" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

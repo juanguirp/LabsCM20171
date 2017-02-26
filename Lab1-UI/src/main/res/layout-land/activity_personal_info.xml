@@ -1,179 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <!-- NO volver a usar jamas el RelativeLayout, es una mier.da -->
 
-        <!-- Nombres y Apellidos -->
-        <LinearLayout
-            android:id="@+id/layoutNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageNombres"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/person"
-                android:layout_weight="1"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/mdNombres"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2">
-
-                <EditText
-                    android:id="@+id/EditTextNombres"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/nombres"
-                    android:imeOptions="actionNext"
-                    android:inputType="textCapSentences|textNoSuggestions" />
-            </android.support.design.widget.TextInputLayout>
-
-            <ImageView
-                android:id="@+id/imageApellidos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/person_add"
-                android:layout_weight="1"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/mdApellidos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2">
-
-                <EditText
-                    android:id="@+id/EditTextApellidos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/apellidos"
-                    android:imeOptions="actionNext"
-                    android:inputType="textCapSentences|textNoSuggestions" />
-            </android.support.design.widget.TextInputLayout>
-
-        </LinearLayout>
-
-        <!-- Sexo -->
-        <LinearLayout
-            android:id="@+id/layoutSexo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageSexo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/people" />
-
-            <TextView
-                android:id="@+id/TextViewSexo"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/sexo" />
-
-            <RadioGroup
-                android:id="@+id/RadioGroupOpcSexo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/RadioButtonH"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/masculino"
-                    android:layout_weight="1"/>
-
-                <RadioButton
-                    android:id="@+id/RadioButtonM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/femenino"
-                    android:layout_weight="1"/>
-
-            </RadioGroup>
-
-
-        </LinearLayout>
-
-        <!-- Fecha de nacimiento -->
-        <LinearLayout
-            android:id="@+id/layoutFecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageFecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/date" />
-
-            <TextView
-                android:id="@+id/TextViewFechaNac"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/fechaNacimiento" />
-
-            <Button
-                android:id="@+id/ButtonDatePicker"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/datapicker"/>
-
-        </LinearLayout>
-
-        <!-- Grado de escolaridad -->
-        <LinearLayout
-            android:id="@+id/layoutGrado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageGrado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/school" />
-
-            <Spinner
-                android:id="@+id/SpinnerEscolaridad"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:entries="@array/gradosEscolaridad"
-                android:prompt="@array/gradosEscolaridad"></Spinner>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Boton "Siguiente" -->
 
     <Button
         android:id="@+id/botonSigPerso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/linearLayout"
         android:text="@string/botonSiguiente" />
 
+    <ImageView
+        android:id="@+id/imageGrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/SpinnerEscolaridad"
+        android:layout_toEndOf="@+id/mdNombres"
+        android:layout_toRightOf="@+id/mdNombres"
+        android:src="@drawable/school" />
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/mdApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_weight="2">
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/mdNombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/EditTextApellidos"
+        android:layout_toRightOf="@+id/mdApellidos"
+        android:layout_weight="2">
+
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageNombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/imageGrado"
+        android:layout_toRightOf="@+id/imageGrado"
+        android:layout_weight="1"
+        android:src="@drawable/person" />
+
+    <EditText
+        android:id="@+id/EditTextApellidos"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:hint="@string/apellidos"
+        android:imeOptions="actionNext"
+        android:inputType="textCapSentences|textNoSuggestions" />
+
+    <ImageView
+        android:id="@+id/imageApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mdApellidos"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/TextViewSexo"
+        android:layout_toRightOf="@+id/TextViewSexo"
+        android:layout_weight="1"
+        android:src="@drawable/person_add" />
+
+    <EditText
+        android:id="@+id/EditTextNombres"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageNombres"
+        android:layout_alignEnd="@+id/SpinnerEscolaridad"
+        android:layout_alignRight="@+id/SpinnerEscolaridad"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:hint="@string/nombres"
+        android:imeOptions="actionNext"
+        android:inputType="textCapSentences|textNoSuggestions" />
+
+    <TextView
+        android:id="@+id/TextViewSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageSexo"
+        android:layout_marginBottom="14dp"
+        android:layout_toLeftOf="@+id/TextViewFechaNac"
+        android:layout_toStartOf="@+id/TextViewFechaNac"
+        android:gravity="center"
+        android:text="@string/sexo" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupOpcSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageSexo"
+        android:layout_toEndOf="@+id/TextViewSexo"
+        android:layout_toRightOf="@+id/TextViewSexo"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RadioButtonH"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/masculino" />
+
+        <RadioButton
+            android:id="@+id/RadioButtonM"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/femenino" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/TextViewSexo"
+        android:layout_toStartOf="@+id/TextViewSexo"
+        android:src="@drawable/date" />
+
+    <ImageView
+        android:id="@+id/imageSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditTextNombres"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/TextViewSexo"
+        android:layout_toStartOf="@+id/TextViewSexo"
+        android:src="@drawable/people" />
+
+    <TextView
+        android:id="@+id/TextViewFechaNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/fechaNacimiento" />
+
+    <Button
+        android:id="@+id/ButtonDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextViewFechaNac"
+        android:layout_alignBottom="@+id/TextViewFechaNac"
+        android:layout_toEndOf="@+id/TextViewFechaNac"
+        android:layout_toRightOf="@+id/TextViewFechaNac"
+        android:text="@string/datapicker" />
+
+    <Spinner
+        android:id="@+id/SpinnerEscolaridad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageApellidos"
+        android:layout_alignRight="@+id/imageApellidos"
+        android:layout_below="@+id/imageFecha"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="26dp"
+        android:entries="@array/gradosEscolaridad"
+        android:prompt="@array/gradosEscolaridad"></Spinner>
 
 
 </RelativeLayout>
